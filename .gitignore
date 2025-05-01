@@ -1,0 +1,17 @@
+# ambiente
+venv
+.venv
+
+# cache
+__pycache__/
+*.pyc
+
+# Configurações locais de IDEs
+.idea/
+.vscode/
+
+# Relatórios gerados automaticamente pelo Robot Framework
+output.xml
+log.html
+report.html
+*.log
