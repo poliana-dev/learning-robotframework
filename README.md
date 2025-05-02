@@ -1,4 +1,4 @@
-**PARA QUÊ SERVE O ROBOT FRAMEWORK?**
+# PARA QUÊ SERVE O ROBOT FRAMEWORK?
 - É um framework de automação (teste de software);
 - Linguagem base dele é Python; 
 - É Baseado em palavras chave (keyword);
@@ -6,7 +6,7 @@
 
 ---
 
-**COMO INSTALAR?**
+# COMO INSTALAR?
 
 1. Realize o download da linguagem Python;
 2. Instale o Robot Framework:
@@ -44,6 +44,61 @@
 4. Se você estiver utilizando o Visual Studio Code, instale a extensão __Robot Framework Language Server__
 
 5. Teste o ambiente com o codigo disponível nesse repositório no arquivo `teste.robot`.
+
+# ESTRUTURA
+É importante possuir boas práticas para obter uma leitura e compreensão excelente! Portando segue:
+
+- Organize sua área:
+```python
+*** Settings ***
+# Coloque as bibliotecas que irão ser usadas aqui.
+
+*** Variables ***
+# Defina suas varíaveis em um local especifico e rápido.
+
+*** Keywords ***
+# Crie suas palavras chave para determinada ação. 
+
+*** Test Cases ***
+# Elabore seus testes/cenários aqui.
+```
+
+- Exemplo de uso prático:
+```python
+*** Settings ***
+
+Library    SeleniumLibrary
+# Biblioteca  -->  #Nome da biblioteca
+### AVISO: Aperte a tecla tab para validar sua ação.
+
+
+*** Variables ***
+
+
+*** Keywords ***
+abrir site google # Palavra chave criada 
+    Open Browser    https://google.com.br     chrome 
+    #Metodo da biblioteca -->  url  -->      navegador que será aberto
+fechar navegador  
+    Close Browser
+    # Método da biblioteca
+
+abrir site globo
+    Open Browser    https://www.globo.com/    chrome
+
+
+*** Test Cases ***
+Cenário 1: Abrir site google # Criei meu cenário (Escreva algo que descreva sua ação)
+    abrir site google 
+    fechar navegador
+    # Usando keyword para manter um código limpo e legível
+    
+
+Cenário 2: Abrir site da globo
+    abrir site globo
+    fechar navegador
+
+```
 
    
    
